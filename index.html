@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array sorting and mapping in JavaScript (Javascript sort and reverse) and (Mapping in Javascript)</title>
+</head>
+<body>
+    <h3>Click to Sort the following:</h3>
+    <p id="sorted"></p>
+    <p id="map"></p>
+    <button onclick="ascending()">ASCENDING</button> <br> <br>
+    <button onclick="descending()">DESCENDING</button> <br> <br>
+    <button onclick="mapPoints()">MAP</button>
+    <script>
+        var score=[10,24,34,46,75,83,81,1002,1735,19253,8453,1526,5343,9262,9452,3473,6243]
+        document.getElementById("sorted").innerHTML=score
+        function ascending(){
+            score.sort(function(a,b){return (a-b)});
+            document.getElementById("sorted").innerHTML=score
+        }
+        function descending(){
+            score.reverse(function(a,b){return (b-a)});
+            document.getElementById("sorted").innerHTML=score
+        }
+        function myFunction(value) {
+            return value+10
+        }
+        function mapPoints() {
+            var mapped=score.map(myFunction);
+            document.getElementById("map").innerHTML=mapped;
+        }
+    </script>
+</body>
+</html>
